@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'; // Importamos la librería de react para hacer uso de jsx
+import ReactDOM from 'react-dom'; // Importamos la librería react-dom para acceder al DOM
+// import PrimeraApp from './PrimeraApp'; // Importamos el FC
+import CounterApp from './CounterApp';
+import './index.css'; // Importamos el CSS
+// const saludo = <h1>Hola mundo</h1>;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Seleccionamos el div con id root que tiene la aplicación
+const divRoot = document.querySelector('#root');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Con el objeto ReactDOM podemos renderizar los jsx
+// ReactDOM.render(<PrimeraApp saludo='Hola, soy parte de las props' nuevaProp={123}/>, divRoot);
+// Sus argumentos son: (los_elementos_a_rederizar, el_div_de_la_aplicacion)
+// La prop "nuevaProp" dara error ya que en el componente especificamos que sea un string y mandamos un número
+
+
+
+ReactDOM.render(<CounterApp value={0} />, divRoot);
